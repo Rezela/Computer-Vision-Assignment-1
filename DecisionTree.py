@@ -2,7 +2,6 @@ import math
 from collections import Counter, defaultdict
 import pandas as pd
 
-# 数据集
 data = [
     [1, 'Sunny', 'High', 'High', 'No'],
     [2, 'Overcast', 'High', 'High', 'Yes'],
@@ -18,14 +17,12 @@ data = [
 df = pd.DataFrame(data, columns=['ID', 'Weather', 'Temperature', 'Wind', 'Class'])
 
 
-# 计算熵
 def entropy(class_list):
     total = len(class_list)
     counts = Counter(class_list)
     return -sum((count / total) * math.log2(count / total) for count in counts.values())
 
 
-# 计算信息增益
 def info_gain(df, attr, target='Class'):
     total_entropy = entropy(df[target])
     values = df[attr].unique()
@@ -36,7 +33,6 @@ def info_gain(df, attr, target='Class'):
     return total_entropy - weighted_entropy
 
 
-# ID3算法
 def id3(df, target='Class', attributes=None, depth=0):
     indent = "  " * depth
     classes = Counter(df[target])
@@ -77,7 +73,6 @@ def id3(df, target='Class', attributes=None, depth=0):
     return tree
 
 
-# 运行
 decision_tree = id3(df)
 print("\nFinal Decision Tree:")
 print(decision_tree)

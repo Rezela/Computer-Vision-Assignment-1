@@ -1,9 +1,7 @@
-# Computing L1 and Cosine distances for KNN classification (K=3)
 import numpy as np
 import pandas as pd
 from sklearn.metrics.pairwise import cosine_distances
 
-# Define dataset
 data = [
     [1, 1.0, 2.0, 3.0, 'A'],
     [2, 0.5, 1.8, 2.7, 'B'],
@@ -17,10 +15,8 @@ data = [
     [10, 5.8, 3.4, 2.7, 'B']
 ]
 
-# Convert to DataFrame
 df = pd.DataFrame(data, columns=['ID', 'x', 'y', 'z', 'Label'])
 
-# Target point
 target = np.array([3.5, 4.0, 6.0])
 
 # Compute L1 distances
@@ -39,7 +35,6 @@ top3_cosine = df.nsmallest(3, 'Cosine_Distance')
 l1_result = top3_l1['Label'].mode()[0]
 cosine_result = top3_cosine['Label'].mode()[0]
 
-# Output results
 print("Full Distance Table:")
 print(df[['ID', 'x', 'y', 'z', 'Label', 'L1_Distance', 'Cosine_Distance']])
 
