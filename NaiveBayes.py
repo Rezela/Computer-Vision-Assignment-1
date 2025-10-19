@@ -2,14 +2,14 @@ import pandas as pd
 import numpy as np
 
 data = [
-    ['Sunny', 'Hot', 'High', False, 'No'],
+    ['Rainy', 'Hot', 'High', True, 'No'],
     ['Overcast', 'Hot', 'High', False, 'Yes'],
-    ['Rain', 'Mild', 'High', False, 'Yes'],
-    ['Sunny', 'Mild', 'Normal', False, 'Yes'],
+    ['Sunny', 'Mild', 'High', False, 'Yes'],
+    ['Sunny', 'Cool', 'Normal', False, 'Yes'],
     ['Sunny', 'Cool', 'Normal', True, 'No'],
     ['Overcast', 'Cool', 'Normal', True, 'Yes'],
-    ['Rain', 'Mild', 'Normal', False, 'Yes'],
-    ['Rain', 'Cool', 'Normal', True, 'No']
+    ['Rainy', 'Mild', 'High', False, 'No'],
+    ['Rainy', 'Cool', 'Normal', False, 'No']
 ]
 
 columns = ['Outlook', 'Temperature', 'Humidity', 'Windy', 'Play Golf']
